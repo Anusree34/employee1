@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+
+    <link rel="stylesheet" href="../index.html">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar bg-body-tertiary" style="background-color: aqua;">
+            <div class="container-fluid" style="background-color: aqua;">
+              
+                <h2 class="text-center fs-3 pb-3" style="color: rgb(21, 21, 146); font-weight: 500; height: 40px;" id="admin">Welcome Admin</h2>
+              <button class="btn btn-danger btn-md" onclick="logout()">Logout</button>
+            </div>
+          </nav>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 sm-12">
+                <img src="https://png.pngtree.com/png-vector/20220718/ourmid/pngtree-quarantine-office-people-employee-manager-png-image_5913171.png" alt="" height="70%" width="600px">
+            </div>
+            <div class="col-lg-4 sm-12" style="margin-top: 100px;margin-left: 0px;">
+                <h2 style="color: blue;">Employee Details</h2>
+                <form action="" >
+                <input type="text" placeholder="Employee Id" id="empid" style="width: 60%;">
+                <br> <br>
+                <input type="text" placeholder="Employee Name" id="empname" style="width: 60%;">
+                <br><br>
+                <input type="text" placeholder="Employee address" id="empaddress" style="width: 60%;">
+                <br><br>
+                <input type="text" placeholder="Employee Designation" id="empdes" style="width: 60%;">
+                <br><br>
+                <input type="text" placeholder="Employee Experience" id="empex" style="width: 60%;">
+                <br><br>
+                <input type="text" placeholder="Employee Salary" id="empsal" style="width: 60%;">
+                <br><br>
+                <button class="btn btn-primary" onclick="addEmp()" style="width: 60%;" >Add Employee
+                
+                </button>
+            </form>
+            <br>
+            </div>
+            <div class="col-lg-4 sm-12">
+                <input type="text" placeholder="Search Employee Id" id="search" style="margin-top: 150px;">
+                <br><br>
+                <button class="btn btn-primary btn-sm" onclick="show()">Search</button>
+                <div >
+                    <p id="details"></p>
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- footer -->
+
+<footer class="text-center text-white" style="background-color: #f1f1f1; margin-bottom: 0px;">
+    <!-- Grid container -->
+    <div class="container pt-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <!-- Github -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-dark" href="">EmployeeManagementSystem.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</div>
+
+    <script>
+      var usname=window.localStorage.getItem('username')
+      admin.innerHTML=`Welcome ${usname}`
+        
+
+        function addEmp()
+        {
+            const employee={
+                id:empid.value,
+                name:empname.value,
+                address:empaddress.value,
+                designation:empdes.value,
+                experience:empex.value,
+                salary:empsal.value
+            }
+            window.localStorage.setItem(employee.id,JSON.stringify(employee));
+            alert("New employee details added")
+        }
+
+        function show()
+        {
+            key=search.value
+            console.log(key);
+
+            if(key in window.localStorage)
+            {
+                item=JSON.parse(localStorage.getItem(key))
+                details.innerHTML=`<br><div style="border:5px solid black;background-color:#7764ED;color:white;width:500px;margin:10px;padding:10px;"><h2>Employee details are:</h2> <br> Employee Id: ${item.id} <br> Employee Name: ${item.name} <br> Employee address: ${item.address} <br> Employee Designation:${item.designation}<br> Employee Experience:${item.experience}<br>Employee Salary:${item.salary}</div>`
+                
+
+            }
+            else{
+                details.innerHTML=`<h5 style="color:red;">Employee not found</h5>`
+            }
+        }
+
+        function logout()
+    {
+        localStorage.clear();
+        window.location='../index.html';
+    }
+    </script>
+
+</body>
+</html>
